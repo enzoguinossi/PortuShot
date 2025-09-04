@@ -1,12 +1,55 @@
-# React + Vite
+# 📸 PortuShot
+---
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O **PortuShot** é uma aplicação que permite transformar códigos escritos em **Portugol** em **snippets visuais exportáveis como PNG**.  
+A ideia é facilitar a criação de anotações e materiais didáticos com uma representação visual do código.
 
-Currently, two official plugins are available:
+## 🔍 Como Funciona
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O PortuShot utiliza:
+- **Prism.js** para realizar a _syntax highlighting_ do Portugol.
+- **html-to-image** para converter o código exibido em imagem PNG.
+- **React** para construir a interface interativa e modular.
 
-## Expanding the ESLint configuration
+O usuário escreve ou cola seu código Portugol no editor, visualiza em tempo real a prévia estilizada e pode exportar facilmente o resultado como uma imagem.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🎯 Funcionalidades
+
+- Editor de código com:
+    - **Numeração de linhas**.
+    - **Auto-resize** do campo de texto.
+- Pré-visualização em tempo real do snippet.
+- Alternância entre **tema claro e escuro**.
+- Opção de exibir ou ocultar a **barra de título da janela** no preview.
+- Exportação rápida para **PNG**.
+- Personalização do **nome do arquivo exportado**.
+
+## ⚙️ Como Rodar Localmente
+
+Se quiser clonar e rodar o projeto no seu computador, siga os passos:
+
+```bash
+# Clone este repositório
+git clone https://github.com/enzoguinossi/portushot.git
+
+# Entre na pasta do projeto
+cd portushot
+
+# Instale as dependências
+npm install
+
+# Rode o servidor de desenvolvimento
+npm run dev
+```
+Após isso, o projeto estará disponível em:
+http://localhost:5173
+
+## 🛠️ Tecnologias Usadas
+
+- **React**: Estrutura da aplicação e gerenciamento de estado.
+- **Prism.js**: Realce de sintaxe para Portugol.
+- **html-to-image**: Exportação do código como imagem.
+- **CSS**: Estilização da interface.
+---
+
+> 🎉 **Desenvolvido por [Enzo Guinossi](https://www.linkedin.com/in/enzo-wacker-guinossi/)** 🎉
