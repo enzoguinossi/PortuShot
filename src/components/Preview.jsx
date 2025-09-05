@@ -1,4 +1,6 @@
-export function Preview({ highlighted, exportRef, titlebar }) {
+import sanitizeFileName from "../utils/sanitizeFileName.js";
+
+export function Preview({ highlighted, exportRef, titlebar, titleText }) {
     return (
         <section className="preview-wrap">
             <div className="editor-head">Preview</div>
@@ -11,7 +13,7 @@ export function Preview({ highlighted, exportRef, titlebar }) {
                                 <span />
                                 <span />
                             </div>
-                            <div className="title">portugol.pg</div>
+                            <div className="title">{sanitizeFileName(titleText)}</div>
                             <div style={{ width: 48 }} />
                         </div>
                     )}

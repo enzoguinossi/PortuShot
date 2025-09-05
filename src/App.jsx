@@ -11,7 +11,8 @@ export default function App() {
     const [code, setCode] = useState(defaultSample)
     const [theme, setTheme] = useState("dark")
     const [titlebar, setTitlebar] = useState(true)
-    const [filename, setFilename] = useState("portugol.png")
+    const [filename, setFilename] = useState("portushot.png")
+    const [titleText, setTitleText] = useState("portugol.pg")
 
     const highlighted = useMemo(() => {
         return Prism.highlight(code, Prism.languages.portugol, "portugol")
@@ -22,6 +23,8 @@ export default function App() {
     return (
         <div className={`app ${theme}`}>
             <Header
+                titleText={titleText}
+                setTitleText={setTitleText}
                 titlebar={titlebar}
                 setTitlebar={setTitlebar}
                 theme={theme}
@@ -31,8 +34,16 @@ export default function App() {
                 onExport={() => downloadPng(exportRef, filename)}
             />
             <main className="grid">
-                <Editor code={code} setCode={setCode} />
-                <Preview highlighted={highlighted} exportRef={exportRef} titlebar={titlebar} />
+                <Editor
+                    code={code}
+                    setCode={setCode}
+                />
+                <Preview
+                    highlighted={highlighted}
+                    exportRef={exportRef}
+                    titlebar={titlebar}
+                    titleText={titleText}
+                />
             </main>
             <Footer />
         </div>

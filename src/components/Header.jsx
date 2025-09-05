@@ -1,4 +1,5 @@
-export function Header({ titlebar, setTitlebar, theme, setTheme, filename, setFilename, onExport }) {
+export function Header({ titlebar, setTitlebar, titleText, setTitleText, theme, setTheme, filename, setFilename, onExport }) {
+
     return (
         <header className="topbar">
             <div className="brand">PortuShot</div>
@@ -14,6 +15,12 @@ export function Header({ titlebar, setTitlebar, theme, setTheme, filename, setFi
                     <option value="light">Light</option>
                 </select>
             </label>
+            {(titlebar && <input
+                className="filename"
+                value={titleText}
+                onChange={e => setTitleText(e.target.value)}
+                placeholder="portugol.pg"
+            />)}
             <input
                 className="filename"
                 value={filename}
