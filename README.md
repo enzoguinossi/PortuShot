@@ -1,6 +1,6 @@
 # 📸 PortuShot
 
-[**Acesse o projeto aqui!**]([https://portushot.vercel.app/])
+[**Acesse o projeto aqui!**](https://portushot.vercel.app/)
 
 ---
 
