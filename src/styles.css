@@ -38,8 +38,12 @@ body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto
 .primary { background: var(--accent); color: #06070a; border: none; padding: 8px 14px; border-radius: 8px; font-weight: 600; cursor: pointer; }
 
 .grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-    padding: 16px; max-width: 1200px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* mantém editor e preview lado a lado */
+    gap: 24px;                      /* mais respiro */
+    padding: 16px;
+    max-width: 1600px;              /* aumenta a largura máxima */
+    margin: 0 auto;
 }
 
 .editor, .preview-wrap {
@@ -70,12 +74,19 @@ body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto
 textarea {
     width: 100%; border: 0; outline: 0; resize: none; padding: 10px 12px;
     background: transparent; color: inherit; font-family: var(--font-mono);
-    font-size: 14px; line-height: 20px; min-height: 320px;
+    font-size: 14px; line-height: 20px;
+    min-height: 320px;
+    max-height: 400px;   /* limite superior */
+    overflow: auto;      /* scroll se passar do limite */
+    white-space: pre-wrap;   /* mantém tabs e quebra linhas */
+    word-break: break-word;  /* evita overflow */
 }
 
 .preview-outer {
-    margin: 12px; border-radius: 14px; overflow: hidden; border: 1px solid var(--border);
+    margin: 0; border-radius: 14px; overflow: hidden; border: 1px solid var(--border);
     background: #0b0f16;
+    width: 100%;          /* ocupa toda a largura disponível */
+    max-width: 100%;      /* não encolhe */
 }
 .app.light .preview-outer { background: #ffffff; border-color: var(--border-light); }
 
@@ -90,10 +101,20 @@ textarea {
 .window-title .title { font-size: 13px; color: #cbd5e1; }
 
 .preview {
-    margin: 0; padding: 16px; overflow: auto;
+    width: 100%; border: 0; outline: 0; resize: none; padding: 10px 12px;
+    min-width: 400px;
+    min-height: 320px;
+    max-height: 400px;   /* limite para manter padrão */
+    overflow: auto;
 }
+
 .preview code {
-    font-family: var(--font-mono); font-size: 14px; line-height: 22px; tab-size: 3; white-space: pre;
+    width: 100%;
+    font-family: var(--font-mono);
+    font-size: 14px; line-height: 22px;
+    tab-size: 3;
+    white-space: pre-wrap;  /* permite quebra mantendo indentação */
+    word-break: break-word;
 }
 
 /* Prism core (mínimo) */

@@ -1,19 +1,19 @@
 export const defaultSample = `algoritmo "Exemplo"
 var
-   inteiro contador
-   real media
+\tinteiro contador
+\treal media
 
 inicio
-   contador := 0
-   leia(media)
-   se media >= 7 entao
-      escreval("Aprovado!")
-   senao
-      escreval("Reprovado!")
-   fimse
-
-   para contador de 1 ate 3 faca
-      escreva("i = ", contador)
-   fimpara
+\tcontador := 0
+\tleia(media)
+\tse media >= 7 entao
+\t\tescreval("Aprovado!")
+\tsenao
+\t\tescreval("Reprovado!")
+\tfimse
+	
+\tpara contador de 1 ate 3 faca
+\t\tescreva("i = ", contador)
+\tfimpara
 fim
 `
